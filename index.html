@@ -1,0 +1,1149 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Powertech Performance | Trockeneisreinigung Erfurt</title>
+  <meta name="description" content="Powertech Performance bietet professionelle Trockeneisreinigung fuer Industrieteile: vor Ort im Umkreis von 100 km um Erfurt oder per Versand.">
+  <style>
+    :root {
+      --black: #02050a;
+      --night: #06101c;
+      --panel: rgba(7, 17, 30, .72);
+      --panel-strong: rgba(8, 22, 38, .9);
+      --cyan: #20c8ff;
+      --blue: #026dff;
+      --ice: #eaf9ff;
+      --muted: #a9bfd0;
+      --line: rgba(130, 226, 255, .2);
+      --white: #ffffff;
+      --shadow: 0 24px 90px rgba(0, 120, 255, .26);
+      --radius: 8px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--black);
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 18% 12%, rgba(32, 200, 255, .24), transparent 25%),
+        radial-gradient(circle at 82% 18%, rgba(2, 109, 255, .18), transparent 28%),
+        linear-gradient(180deg, #02050a 0%, #07111e 40%, #02050a 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      opacity: .2;
+      background-image:
+        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(to bottom, black 0%, transparent 82%);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -2;
+      background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(32, 200, 255, .17), transparent 24rem);
+      transition: background .15s ease;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, input, textarea, select { font: inherit; }
+
+    .frost-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 6;
+      mix-blend-mode: screen;
+    }
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 5;
+      padding: 14px clamp(16px, 4vw, 56px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      background: linear-gradient(180deg, rgba(2, 5, 10, .9), rgba(2, 5, 10, .48));
+      border-bottom: 1px solid rgba(117, 221, 255, .13);
+      backdrop-filter: blur(18px);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 56px;
+      height: 46px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 16px rgba(32, 200, 255, .5));
+    }
+
+    .brand span {
+      display: block;
+      line-height: 1;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-weight: 800;
+      font-size: clamp(12px, 1.8vw, 16px);
+      white-space: nowrap;
+    }
+
+    .brand small {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(10px, 2.4vw, 26px);
+      color: #d4ecf7;
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .nav a {
+      position: relative;
+      opacity: .8;
+      transition: opacity .2s ease, color .2s ease;
+    }
+
+    .nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      transform: scaleX(0);
+      transition: transform .25s ease;
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible {
+      color: var(--ice);
+      opacity: 1;
+    }
+
+    .nav a:hover::after,
+    .nav a:focus-visible::after { transform: scaleX(1); }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 44px;
+      padding: 0 18px;
+      border: 1px solid rgba(154, 237, 255, .55);
+      border-radius: var(--radius);
+      color: var(--black);
+      background: linear-gradient(135deg, #f6fdff, #7de4ff 42%, #0188ff);
+      box-shadow: 0 0 0 1px rgba(255,255,255,.28) inset, 0 14px 40px rgba(32, 200, 255, .26);
+      font-weight: 800;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .cta:hover,
+    .cta:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 0 0 1px rgba(255,255,255,.5) inset, 0 18px 52px rgba(32, 200, 255, .42);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      align-items: center;
+      padding: 116px clamp(18px, 5vw, 72px) 64px;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      background:
+        linear-gradient(90deg, rgba(2,5,10,.92) 0%, rgba(2,5,10,.72) 38%, rgba(2,5,10,.26) 74%),
+        linear-gradient(180deg, rgba(2,5,10,.1), #02050a 98%),
+        url("assets/hero-dry-ice.png") center right / cover no-repeat;
+      transform: scale(1.03);
+      animation: heroWake 1.4s ease-out both;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: -20%;
+      z-index: -2;
+      opacity: .42;
+      background:
+        radial-gradient(circle at 58% 42%, rgba(32, 200, 255, .24), transparent 14%),
+        repeating-linear-gradient(102deg, transparent 0 42px, rgba(119, 225, 255, .06) 43px 44px);
+      animation: scan 10s linear infinite;
+    }
+
+    .hero-inner {
+      max-width: 760px;
+      transform-style: preserve-3d;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 22px;
+      color: #bdeeff;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 42px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan));
+      box-shadow: 0 0 18px var(--cyan);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 12ch;
+      font-size: clamp(46px, 9vw, 112px);
+      line-height: .88;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      text-shadow: 0 0 38px rgba(32, 200, 255, .22);
+    }
+
+    .ice-text {
+      background: linear-gradient(180deg, #fff 0%, #bdf4ff 38%, #29c8ff 62%, #f8feff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 0 22px rgba(32, 200, 255, .22));
+    }
+
+    .hero-copy {
+      margin: 24px 0 0;
+      max-width: 650px;
+      color: #d9edf6;
+      font-size: clamp(17px, 2.1vw, 22px);
+      line-height: 1.55;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(145, 230, 255, .32);
+      color: var(--ice);
+      background: rgba(255,255,255,.04);
+      box-shadow: 0 0 26px rgba(32, 200, 255, .08) inset;
+      font-weight: 800;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      transition: background .25s ease, transform .25s ease, border-color .25s ease;
+    }
+
+    .ghost:hover,
+    .ghost:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(145, 230, 255, .7);
+      background: rgba(32, 200, 255, .1);
+    }
+
+    .hero-stats {
+      position: absolute;
+      right: clamp(18px, 5vw, 72px);
+      bottom: 42px;
+      width: min(560px, calc(100% - 36px));
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      border: 1px solid rgba(145, 230, 255, .22);
+      background: rgba(145, 230, 255, .15);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .stat {
+      min-height: 116px;
+      padding: 18px;
+      background: rgba(3, 10, 18, .82);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .stat::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(32, 200, 255, .16), transparent 58%);
+      transform: translateX(-100%);
+      animation: frostPass 5.8s ease-in-out infinite;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--ice);
+      font-size: clamp(24px, 3vw, 36px);
+      line-height: 1;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+    }
+
+    section {
+      padding: clamp(72px, 10vw, 132px) clamp(18px, 5vw, 72px);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(260px, .65fr);
+      gap: clamp(24px, 6vw, 80px);
+      align-items: end;
+      max-width: 1240px;
+      margin: 0 auto 40px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(34px, 5.2vw, 72px);
+      line-height: .98;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .section-head p,
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(16px, 1.6vw, 19px);
+      line-height: 1.7;
+    }
+
+    .services-grid {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .service-card {
+      position: relative;
+      min-height: 510px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--panel);
+      box-shadow: 0 24px 70px rgba(0,0,0,.35);
+      transform-style: preserve-3d;
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    }
+
+    .service-card:hover {
+      border-color: rgba(32, 200, 255, .62);
+      box-shadow: 0 30px 88px rgba(0, 135, 255, .22);
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 270px;
+      object-fit: cover;
+      filter: saturate(1.05) contrast(1.05);
+      transition: transform .7s ease, filter .7s ease;
+    }
+
+    .service-card:hover img {
+      transform: scale(1.08);
+      filter: saturate(1.2) contrast(1.12) brightness(1.08);
+    }
+
+    .service-card .content {
+      position: relative;
+      padding: 24px;
+      background: linear-gradient(180deg, rgba(4, 11, 20, .7), rgba(4, 11, 20, .96));
+    }
+
+    .service-card h3 {
+      margin: 0 0 12px;
+      font-size: 23px;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+
+    .service-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .tag {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      padding: 8px 10px;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: var(--radius);
+      color: var(--ice);
+      background: rgba(2, 5, 10, .64);
+      backdrop-filter: blur(12px);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .about {
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.03), transparent),
+        radial-gradient(circle at 76% 40%, rgba(32, 200, 255, .16), transparent 28%);
+    }
+
+    .about-wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(300px, .7fr);
+      gap: clamp(30px, 7vw, 90px);
+      align-items: center;
+    }
+
+    .logo-stage {
+      position: relative;
+      min-height: 520px;
+      display: grid;
+      place-items: center;
+      perspective: 1000px;
+    }
+
+    .logo-stage::before,
+    .logo-stage::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(99, 222, 255, .2);
+      inset: 10%;
+      transform: rotate(12deg);
+      box-shadow: 0 0 60px rgba(32, 200, 255, .12) inset;
+      animation: orbit 16s linear infinite;
+    }
+
+    .logo-stage::after {
+      inset: 22%;
+      transform: rotate(-18deg);
+      animation-direction: reverse;
+      animation-duration: 12s;
+    }
+
+    .logo-stage img {
+      position: relative;
+      z-index: 1;
+      width: min(520px, 100%);
+      filter: drop-shadow(0 0 38px rgba(32, 200, 255, .42));
+      animation: floatLogo 5.5s ease-in-out infinite;
+    }
+
+    .about-panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: clamp(24px, 4vw, 42px);
+      background: linear-gradient(145deg, rgba(8, 22, 38, .84), rgba(2, 5, 10, .72));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .about-panel h2 { margin-bottom: 22px; }
+
+    .check-list {
+      display: grid;
+      gap: 14px;
+      margin: 28px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .check-list li {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 12px;
+      align-items: start;
+      color: #d8eef8;
+      line-height: 1.55;
+    }
+
+    .check-list li::before {
+      content: "";
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 50% 50%, #fff 0 2px, transparent 3px),
+        radial-gradient(circle, rgba(32, 200, 255, .42), rgba(2, 109, 255, .16));
+      border: 1px solid rgba(153, 237, 255, .45);
+      box-shadow: 0 0 20px rgba(32, 200, 255, .3);
+    }
+
+    .process-band {
+      border-block: 1px solid rgba(145, 230, 255, .14);
+      background:
+        linear-gradient(90deg, rgba(32, 200, 255, .08), transparent, rgba(2, 109, 255, .1)),
+        rgba(255,255,255,.02);
+    }
+
+    .process {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      border: 1px solid rgba(145, 230, 255, .18);
+      background: rgba(145, 230, 255, .14);
+    }
+
+    .step {
+      position: relative;
+      min-height: 236px;
+      padding: 24px;
+      background: rgba(3, 10, 18, .86);
+      overflow: hidden;
+    }
+
+    .step::after {
+      content: "";
+      position: absolute;
+      inset: auto 18px 18px auto;
+      width: 74px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan));
+      box-shadow: 0 0 18px var(--cyan);
+    }
+
+    .step b {
+      color: var(--cyan);
+      font-size: 13px;
+      letter-spacing: .18em;
+    }
+
+    .step h3 {
+      margin: 34px 0 12px;
+      font-size: 22px;
+      text-transform: uppercase;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.62;
+    }
+
+    .contact {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(180deg, #02050a, rgba(2,5,10,.76)),
+        radial-gradient(circle at 50% 8%, rgba(32, 200, 255, .16), transparent 35%);
+    }
+
+    .contact-wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(280px, .72fr) minmax(0, 1fr);
+      gap: clamp(24px, 5vw, 72px);
+      align-items: stretch;
+    }
+
+    .contact-card,
+    form {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel-strong);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .contact-card {
+      padding: clamp(24px, 4vw, 42px);
+    }
+
+    .contact-card h2 { margin-bottom: 22px; }
+
+    .address {
+      margin-top: 28px;
+      display: grid;
+      gap: 10px;
+      color: #dceff8;
+      line-height: 1.55;
+      font-size: 17px;
+    }
+
+    .address strong {
+      color: var(--ice);
+      font-size: 20px;
+    }
+
+    form {
+      display: grid;
+      gap: 16px;
+      padding: clamp(20px, 4vw, 38px);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    label {
+      display: grid;
+      gap: 8px;
+      color: #d8eef8;
+      font-size: 13px;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      border: 1px solid rgba(145, 230, 255, .22);
+      border-radius: var(--radius);
+      color: var(--ice);
+      background: rgba(2, 5, 10, .66);
+      outline: none;
+      padding: 14px 14px;
+      transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    textarea {
+      min-height: 146px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: rgba(32, 200, 255, .72);
+      background: rgba(2, 11, 20, .92);
+      box-shadow: 0 0 0 3px rgba(32, 200, 255, .12);
+    }
+
+    .notice {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .submit {
+      justify-self: start;
+      cursor: pointer;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 22px;
+      z-index: 7;
+      width: min(440px, calc(100% - 32px));
+      padding: 14px 16px;
+      border: 1px solid rgba(145, 230, 255, .34);
+      border-radius: var(--radius);
+      color: var(--ice);
+      background: rgba(3, 10, 18, .92);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+      transform: translate(-50%, 130%);
+      transition: transform .3s ease;
+    }
+
+    .toast.show { transform: translate(-50%, 0); }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(34px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes heroWake {
+      from { opacity: 0; transform: scale(1.09); filter: blur(8px); }
+      to { opacity: 1; transform: scale(1.03); filter: blur(0); }
+    }
+
+    @keyframes scan {
+      from { transform: translate3d(-4%, -2%, 0); }
+      to { transform: translate3d(4%, 2%, 0); }
+    }
+
+    @keyframes frostPass {
+      0%, 45% { transform: translateX(-110%); }
+      70%, 100% { transform: translateX(110%); }
+    }
+
+    @keyframes orbit {
+      to { rotate: 360deg; }
+    }
+
+    @keyframes floatLogo {
+      0%, 100% { transform: translateY(0) rotateX(0deg); }
+      50% { transform: translateY(-16px) rotateX(4deg); }
+    }
+
+    @media (max-width: 980px) {
+      .site-header { align-items: flex-start; }
+      .nav { display: none; }
+      .hero {
+        min-height: auto;
+        padding-top: 112px;
+        padding-bottom: 280px;
+      }
+      .hero::before {
+        background:
+          linear-gradient(180deg, rgba(2,5,10,.78) 0%, rgba(2,5,10,.82) 62%, #02050a 100%),
+          url("assets/hero-dry-ice.png") center / cover no-repeat;
+      }
+      .hero-stats {
+        left: 18px;
+        right: 18px;
+        grid-template-columns: 1fr;
+      }
+      .stat { min-height: 82px; }
+      .section-head,
+      .about-wrap,
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+      .services-grid,
+      .process {
+        grid-template-columns: 1fr 1fr;
+      }
+      .logo-stage { min-height: 380px; }
+    }
+
+    @media (max-width: 640px) {
+      .site-header {
+        padding: 10px 14px;
+      }
+      .brand img {
+        width: 48px;
+        height: 40px;
+      }
+      .brand span {
+        white-space: normal;
+        max-width: 148px;
+      }
+      .site-header .cta {
+        min-height: 40px;
+        padding: 0 12px;
+        font-size: 11px;
+      }
+      .hero {
+        padding-inline: 16px;
+      }
+      h1 {
+        font-size: clamp(42px, 15vw, 70px);
+      }
+      .hero-actions a {
+        width: 100%;
+      }
+      .services-grid,
+      .process,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .service-card {
+        min-height: auto;
+      }
+      .service-card img {
+        height: 240px;
+      }
+      section {
+        padding-inline: 16px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+      .frost-canvas { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <canvas class="frost-canvas" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Powertech Performance Startseite">
+      <img src="assets/powertech-logo.png" alt="Powertech Performance Logo">
+      <span>Powertech<small>Performance</small></span>
+    </a>
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#ueber-uns">Ueber uns</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="cta" href="#kontakt">Anfragen</a>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Powertech Performance Trockeneisreinigung">
+      <div class="hero-inner reveal">
+        <p class="eyebrow">Trockeneisreinigung fuer Industrie-Teile</p>
+        <h1><span class="ice-text">Eiskalt.</span><br>Praezise.<br>Sauber.</h1>
+        <p class="hero-copy">Powertech Performance reinigt Maschinen- und Industrieteile mit Trockeneis: materialschonend, trocken und ohne abrasive Rueckstaende. Teile einsenden oder im Umkreis von 100 km um Erfurt vor Ort reinigen lassen.</p>
+        <div class="hero-actions">
+          <a class="cta" href="#kontakt">Projekt anfragen</a>
+          <a class="ghost" href="#leistungen">Leistung ansehen</a>
+        </div>
+      </div>
+
+      <div class="hero-stats" aria-label="Leistungsdaten">
+        <div class="stat">
+          <strong>-78 °C</strong>
+          <span>Trockeneis sublimiert direkt beim Auftreffen</span>
+        </div>
+        <div class="stat">
+          <strong>100 km</strong>
+          <span>Mobiler Einsatz rund um Erfurt</span>
+        </div>
+        <div class="stat">
+          <strong>1-5 m³/min</strong>
+          <span>Kompressorleistung je nach Bauteil</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="leistungen">
+      <div class="section-head reveal">
+        <h2>Industrieteile wie neu.</h2>
+        <p>Fuer verharzte, oelige, verrusste oder produktionsverschmutzte Komponenten. Trockeneis arbeitet ohne Wasser und ohne Strahlmittelreste, ideal fuer empfindliche Oberflaechen, Formen, Motorenteile, Werkzeuge und Maschinenbereiche.</p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card reveal">
+          <span class="tag">Vor Ort</span>
+          <img src="assets/onsite-cleaning.png" alt="Mobile Trockeneisreinigung vor einer Industriehalle">
+          <div class="content">
+            <h3>Mobiler Einsatz</h3>
+            <p>Wir kommen im Umkreis von 100 km um Erfurt zu deinem Betrieb und reinigen Maschinenteile direkt dort, wo Stillstand teuer wird.</p>
+          </div>
+        </article>
+
+        <article class="service-card reveal">
+          <span class="tag">Per Versand</span>
+          <img src="assets/parts-cleaning.png" alt="Trockeneisstrahl auf praezise Metallteile">
+          <div class="content">
+            <h3>Teile einschicken</h3>
+            <p>Industrieteile koennen angeliefert oder zugesendet werden. Wir reinigen sie kontrolliert, schonend und bereiten sie fuer Rueckversand oder Abholung vor.</p>
+          </div>
+        </article>
+
+        <article class="service-card reveal">
+          <span class="tag">Power</span>
+          <img src="assets/hero-dry-ice.png" alt="Techniker reinigt ein Maschinenteil mit Trockeneis">
+          <div class="content">
+            <h3>1-5 m³/Minute</h3>
+            <p>Die Kompressorleistung wird passend zur Verschmutzung, Bauteilgeometrie und Oberflaeche eingestellt, damit Reinigungskraft und Materialschutz zusammenpassen.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="about" id="ueber-uns">
+      <div class="about-wrap">
+        <div class="logo-stage reveal" aria-hidden="true">
+          <img src="assets/powertech-logo.png" alt="">
+        </div>
+        <div class="about-panel reveal">
+          <p class="eyebrow">Ueber uns</p>
+          <h2>Powertech Performance</h2>
+          <p class="lead">Powertech Performance bietet Trockeneis-Reinigung fuer die Industrie an: Teilreinigung vor Ort, Reinigung zugesendeter Komponenten und saubere Vorbereitung von Maschinen- und Anlagenbauteilen.</p>
+          <ul class="check-list">
+            <li>Schonende Entfernung von Oel, Fett, Produktionsrueckstaenden, Ruß und Anhaftungen.</li>
+            <li>Trockener Prozess ohne Wasserfilm und ohne zusaetzliches Strahlgut auf dem Bauteil.</li>
+            <li>Luxurioes praezise Anmutung, aber mit handfester Werkstatt- und Industrieorientierung.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="process-band" id="ablauf">
+      <div class="section-head reveal">
+        <h2>So laeuft die Reinigung.</h2>
+        <p>Kurz klaeren, Bauteile pruefen, Reinigung ausfuehren, Ergebnis uebergeben. Der Ablauf ist bewusst direkt gehalten, damit du schnell zu sauberen Teilen kommst.</p>
+      </div>
+      <div class="process">
+        <article class="step reveal">
+          <b>01</b>
+          <h3>Anfrage</h3>
+          <p>Bauteil, Material, Verschmutzung und Einsatzort oder Versandweg beschreiben.</p>
+        </article>
+        <article class="step reveal">
+          <b>02</b>
+          <h3>Pruefung</h3>
+          <p>Wir schaetzen Aufwand, Zugaenglichkeit und geeignete Strahlparameter ein.</p>
+        </article>
+        <article class="step reveal">
+          <b>03</b>
+          <h3>Reinigung</h3>
+          <p>Vor Ort um Erfurt oder bei uns nach Zusendung deiner Industrieteile.</p>
+        </article>
+        <article class="step reveal">
+          <b>04</b>
+          <h3>Uebergabe</h3>
+          <p>Saubere Teile zurueck in den Prozess, zur Montage oder zur Weiterbearbeitung.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact" id="kontakt">
+      <div class="contact-wrap">
+        <div class="contact-card reveal">
+          <p class="eyebrow">Kontakt</p>
+          <h2>Bereit fuer eiskalte Reinigungskraft?</h2>
+          <p class="lead">Schick eine unverbindliche Anfrage mit Bauteil, Verschmutzung und Standort. Das Formular ist aktuell als Design vorbereitet und sendet noch keine Daten.</p>
+          <div class="address">
+            <strong>Powertech Performance</strong>
+            <span>Benjamin Lemmer</span>
+            <span>An der Klinge 10</span>
+            <span>99095 Erfurt</span>
+          </div>
+        </div>
+
+        <form class="reveal" aria-label="Kontaktformular ohne Versandfunktion">
+          <div class="form-row">
+            <label> Name
+              <input type="text" name="name" autocomplete="name" placeholder="Dein Name">
+            </label>
+            <label> Unternehmen
+              <input type="text" name="company" autocomplete="organization" placeholder="Firma">
+            </label>
+          </div>
+          <div class="form-row">
+            <label> Telefon oder E-Mail
+              <input type="text" name="contact" autocomplete="email" placeholder="Kontaktmoeglichkeit">
+            </label>
+            <label> Einsatzart
+              <select name="mode">
+                <option>Vor Ort bis 100 km um Erfurt</option>
+                <option>Industrieteile zuschicken</option>
+                <option>Erstberatung</option>
+              </select>
+            </label>
+          </div>
+          <label> Bauteil und Verschmutzung
+            <textarea name="message" placeholder="Welche Teile sollen gereinigt werden? Welche Rueckstaende sind vorhanden?"></textarea>
+          </label>
+          <p class="notice">Hinweis: Dieses Kontaktformular ist noch ohne Funktion und dient zunaechst als Platzhalter fuer die spaetere Anbindung.</p>
+          <button class="cta submit" type="submit">Anfrage vorbereiten</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" role="status" aria-live="polite">Das Formular ist aktuell noch ohne Versandfunktion.</div>
+
+  <script>
+    const root = document.documentElement;
+    const canvas = document.querySelector(".frost-canvas");
+    const ctx = canvas.getContext("2d");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const particles = [];
+    let width = 0;
+    let height = 0;
+    let pointerX = innerWidth / 2;
+    let pointerY = innerHeight / 2;
+    let lastMove = 0;
+
+    function resizeCanvas() {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = Math.floor(width * dpr);
+      canvas.height = Math.floor(height * dpr);
+      canvas.style.width = width + "px";
+      canvas.style.height = height + "px";
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    function spawnFrost(x, y, amount = 9) {
+      if (reducedMotion) return;
+      for (let i = 0; i < amount; i++) {
+        particles.push({
+          x,
+          y,
+          vx: (Math.random() - .5) * 2.7 - 1.3,
+          vy: (Math.random() - .5) * 2.1 - .7,
+          r: Math.random() * 5 + 1.5,
+          life: Math.random() * 34 + 36,
+          max: 70,
+          hue: 190 + Math.random() * 24
+        });
+      }
+      if (particles.length > 320) particles.splice(0, particles.length - 320);
+    }
+
+    function drawFrost() {
+      ctx.clearRect(0, 0, width, height);
+      for (let i = particles.length - 1; i >= 0; i--) {
+        const p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vx *= .985;
+        p.vy *= .985;
+        p.r += .07;
+        p.life -= 1;
+        const alpha = Math.max(p.life / p.max, 0);
+        const glow = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 4);
+        glow.addColorStop(0, `hsla(${p.hue}, 100%, 86%, ${alpha * .55})`);
+        glow.addColorStop(.35, `hsla(${p.hue}, 100%, 68%, ${alpha * .16})`);
+        glow.addColorStop(1, "rgba(255,255,255,0)");
+        ctx.fillStyle = glow;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r * 4, 0, Math.PI * 2);
+        ctx.fill();
+        if (p.life <= 0) particles.splice(i, 1);
+      }
+      requestAnimationFrame(drawFrost);
+    }
+
+    window.addEventListener("resize", resizeCanvas);
+    window.addEventListener("pointermove", (event) => {
+      pointerX = event.clientX;
+      pointerY = event.clientY;
+      root.style.setProperty("--mx", `${pointerX}px`);
+      root.style.setProperty("--my", `${pointerY}px`);
+      const now = performance.now();
+      if (now - lastMove > 18) {
+        spawnFrost(pointerX, pointerY, 8);
+        lastMove = now;
+      }
+    }, { passive: true });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: .16 });
+
+    document.querySelectorAll(".reveal").forEach((el, index) => {
+      el.style.transitionDelay = `${Math.min(index * 45, 260)}ms`;
+      observer.observe(el);
+    });
+
+    document.querySelectorAll(".service-card").forEach((card) => {
+      card.addEventListener("pointermove", (event) => {
+        const rect = card.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - .5;
+        const y = (event.clientY - rect.top) / rect.height - .5;
+        card.style.transform = `perspective(900px) rotateY(${x * 5}deg) rotateX(${-y * 5}deg) translateY(-4px)`;
+      });
+      card.addEventListener("pointerleave", () => {
+        card.style.transform = "";
+      });
+    });
+
+    const form = document.querySelector("form");
+    const toast = document.querySelector(".toast");
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      toast.classList.add("show");
+      spawnFrost(window.innerWidth / 2, window.innerHeight - 80, 48);
+      window.setTimeout(() => toast.classList.remove("show"), 3200);
+    });
+
+    resizeCanvas();
+    if (!reducedMotion) {
+      drawFrost();
+      setInterval(() => spawnFrost(Math.random() * width, Math.random() * height * .7, 3), 420);
+    }
+  </script>
+</body>
+</html>
