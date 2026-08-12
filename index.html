@@ -710,6 +710,47 @@
       line-height: 1.55;
     }
 
+    .notice a {
+      color: var(--cyan);
+      text-decoration: underline;
+    }
+
+    .site-footer {
+      position: relative;
+      z-index: 1;
+      padding: 26px clamp(18px, 5vw, 72px);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(145, 230, 255, .14);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .site-footer nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    .site-footer a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .site-footer a:hover,
+    .site-footer a:focus-visible {
+      color: var(--ice);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      .site-footer {
+        padding-bottom: 96px;
+      }
+    }
+
     .submit {
       justify-self: start;
       cursor: pointer;
@@ -1082,12 +1123,20 @@
             <textarea name="message" placeholder="Welche Teile sollen gereinigt werden? Welche Rueckstaende sind vorhanden?" required></textarea>
           </label>
           <input type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
-          <p class="notice">Wir melden uns in der Regel innerhalb eines Werktags zurueck.</p>
+          <p class="notice">Wir melden uns in der Regel innerhalb eines Werktags zurueck. Mit dem Absenden stimmst du der Verarbeitung deiner Angaben gemaess unserer <a href="datenschutz.html">Datenschutzerklaerung</a> zu.</p>
           <button class="cta submit" type="submit">Anfrage senden</button>
         </form>
       </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <span>&copy; 2026 Powertech Performance</span>
+    <nav aria-label="Rechtliches">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </nav>
+  </footer>
 
   <div class="toast" role="status" aria-live="polite">Das Formular ist aktuell noch ohne Versandfunktion.</div>
 
