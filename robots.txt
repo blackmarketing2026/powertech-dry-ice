@@ -1,8 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /impressum
-Disallow: /datenschutz
-Disallow: /sitemap
-Allow: /sitemap.xml
 
 Sitemap: https://www.powertech-dry-ice.de/sitemap.xml
