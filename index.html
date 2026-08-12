@@ -988,7 +988,7 @@
         <div class="contact-card reveal">
           <p class="eyebrow">Kontakt</p>
           <h2>Bereit fuer eiskalte Reinigungskraft?</h2>
-          <p class="lead">Schick eine unverbindliche Anfrage mit Bauteil, Verschmutzung und Standort. Das Formular ist aktuell als Design vorbereitet und sendet noch keine Daten.</p>
+          <p class="lead">Schick eine unverbindliche Anfrage mit Bauteil, Verschmutzung und Standort.</p>
           <div class="address">
             <strong>Powertech Performance</strong>
             <span>Benjamin Lemmer</span>
@@ -997,10 +997,10 @@
           </div>
         </div>
 
-        <form class="reveal" aria-label="Kontaktformular ohne Versandfunktion">
+        <form class="reveal" aria-label="Kontaktformular" id="contact-form">
           <div class="form-row">
             <label> Name
-              <input type="text" name="name" autocomplete="name" placeholder="Dein Name">
+              <input type="text" name="name" autocomplete="name" placeholder="Dein Name" required>
             </label>
             <label> Unternehmen
               <input type="text" name="company" autocomplete="organization" placeholder="Firma">
@@ -1008,7 +1008,7 @@
           </div>
           <div class="form-row">
             <label> Telefon oder E-Mail
-              <input type="text" name="contact" autocomplete="email" placeholder="Kontaktmoeglichkeit">
+              <input type="text" name="contact" autocomplete="email" placeholder="Kontaktmoeglichkeit" required>
             </label>
             <label> Einsatzart
               <select name="mode">
@@ -1019,10 +1019,11 @@
             </label>
           </div>
           <label> Bauteil und Verschmutzung
-            <textarea name="message" placeholder="Welche Teile sollen gereinigt werden? Welche Rueckstaende sind vorhanden?"></textarea>
+            <textarea name="message" placeholder="Welche Teile sollen gereinigt werden? Welche Rueckstaende sind vorhanden?" required></textarea>
           </label>
-          <p class="notice">Hinweis: Dieses Kontaktformular ist noch ohne Funktion und dient zunaechst als Platzhalter fuer die spaetere Anbindung.</p>
-          <button class="cta submit" type="submit">Anfrage vorbereiten</button>
+          <input type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
+          <p class="notice">Wir melden uns in der Regel innerhalb eines Werktags zurueck.</p>
+          <button class="cta submit" type="submit">Anfrage senden</button>
         </form>
       </div>
     </section>
@@ -1130,13 +1131,44 @@
       });
     });
 
-    const form = document.querySelector("form");
+    const form = document.getElementById("contact-form");
     const toast = document.querySelector(".toast");
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
+
+    function showToast(message) {
+      toast.textContent = message;
       toast.classList.add("show");
-      spawnFrost(window.innerWidth / 2, window.innerHeight - 80, 48);
-      window.setTimeout(() => toast.classList.remove("show"), 3200);
+      window.setTimeout(() => toast.classList.remove("show"), 3800);
+    }
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const submitBtn = form.querySelector(".submit");
+      const data = Object.fromEntries(new FormData(form).entries());
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Wird gesendet...";
+
+      try {
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+        const result = await response.json().catch(() => ({}));
+
+        if (response.ok && result.ok) {
+          showToast("Danke! Deine Anfrage wurde versendet.");
+          spawnFrost(window.innerWidth / 2, window.innerHeight - 80, 48);
+          form.reset();
+        } else {
+          showToast(result.error || "Anfrage konnte nicht gesendet werden.");
+        }
+      } catch (err) {
+        showToast("Netzwerkfehler. Bitte spaeter erneut versuchen.");
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Anfrage senden";
+      }
     });
 
     resizeCanvas();
