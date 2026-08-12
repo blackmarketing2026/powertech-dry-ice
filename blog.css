@@ -150,6 +150,27 @@ main.legal.post {
   max-width: none;
 }
 
+.post-figure {
+  margin: 26px 0 30px;
+}
+
+.post-figure img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 24px 70px rgba(0, 120, 255, .2);
+}
+
+.post-figure figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
 .post .lede {
   color: #d8eef8;
   font-size: 18px;
