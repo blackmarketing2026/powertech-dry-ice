@@ -995,14 +995,29 @@
     }
 
     .cookie-banner-main {
-      padding: clamp(18px, 3.4vw, 30px);
+      padding: clamp(16px, 3vw, 22px) clamp(18px, 3.4vw, 26px);
+    }
+
+    .cookie-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 14px;
     }
 
     .cookie-text {
-      margin: 0 0 18px;
+      margin: 0;
       color: #d8eef8;
-      font-size: 14px;
-      line-height: 1.6;
+      font-size: 13.5px;
+      line-height: 1.55;
+      flex: 1;
+    }
+
+    .cookie-text strong {
+      display: block;
+      color: var(--ice);
+      font-size: 14.5px;
+      margin-bottom: 2px;
     }
 
     .cookie-text a {
@@ -1010,10 +1025,38 @@
       text-decoration: underline;
     }
 
+    .cookie-gear {
+      flex: none;
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(145, 230, 255, .3);
+      border-radius: 50%;
+      background: rgba(255,255,255,.04);
+      color: var(--ice);
+      cursor: pointer;
+      transition: background .2s ease, border-color .2s ease, transform .3s ease;
+    }
+
+    .cookie-gear svg { width: 18px; height: 18px; }
+
+    .cookie-gear:hover,
+    .cookie-gear:focus-visible {
+      border-color: rgba(145, 230, 255, .7);
+      background: rgba(32, 200, 255, .1);
+    }
+
+    .cookie-gear[aria-expanded="true"] {
+      transform: rotate(45deg);
+      background: rgba(32, 200, 255, .14);
+      border-color: rgba(145, 230, 255, .7);
+    }
+
     .cookie-categories {
       display: grid;
       gap: 12px;
-      margin: 0 0 18px;
+      margin: 0 0 14px;
       padding: 16px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -1042,13 +1085,8 @@
 
     .cookie-actions {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 10px;
-    }
-
-    .cookie-actions-save {
-      grid-template-columns: 1fr;
-      margin-top: 10px;
     }
 
     .cookie-btn {
@@ -1082,7 +1120,7 @@
 
     @media (max-width: 640px) {
       .cookie-actions {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
       }
     }
 
@@ -1293,8 +1331,15 @@
   <div class="cookie-overlay" id="cookie-overlay" hidden></div>
   <section class="cookie-banner" id="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-title" aria-describedby="cookie-desc" hidden>
     <div class="cookie-banner-main">
-      <p class="eyebrow" id="cookie-title">Cookie-Einstellungen</p>
-      <p id="cookie-desc" class="cookie-text">Alles erlauben? Nur das Noetigste? Ich glaub, ablehnen. Du entscheidest, welche Cookies und Analyse-/Marketing-Tools (z. B. Google Analytics, Meta-Pixel) auf dieser Website aktiv sein duerfen. Details in der <a href="/datenschutz">Datenschutzerklaerung</a>.</p>
+      <div class="cookie-head">
+        <p id="cookie-desc" class="cookie-text">
+          <strong id="cookie-title">Alles erlauben? Nur das Noetigste? Ich glaub, ablehnen.</strong>
+          Details in der <a href="/datenschutz">Datenschutzerklaerung</a>.
+        </p>
+        <button type="button" class="cookie-gear" id="cookie-settings" aria-label="Cookie-Einstellungen" aria-expanded="false" title="Einstellungen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </button>
+      </div>
 
       <div class="cookie-categories" id="cookie-categories" hidden>
         <label class="cookie-cat">
@@ -1309,16 +1354,13 @@
           <input type="checkbox" id="cat-marketing">
           <span><strong>Marketing</strong><br>Meta-/Facebook-Pixel und Google Tag Manager fuer Anzeigen.</span>
         </label>
+        <button type="button" class="cookie-btn cookie-btn-accept" id="cookie-save">Auswahl speichern</button>
       </div>
 
-      <div class="cookie-actions">
-        <button type="button" class="cookie-btn" id="cookie-reject">Ich glaub, ablehnen</button>
-        <button type="button" class="cookie-btn" id="cookie-essential">Nur das Noetigste</button>
-        <button type="button" class="cookie-btn" id="cookie-settings">Einstellungen</button>
+      <div class="cookie-actions" id="cookie-main-actions">
+        <button type="button" class="cookie-btn" id="cookie-reject">Ablehnen</button>
+        <button type="button" class="cookie-btn" id="cookie-essential">Nur das Noetigste erlauben</button>
         <button type="button" class="cookie-btn" id="cookie-accept">Alles erlauben</button>
-      </div>
-      <div class="cookie-actions cookie-actions-save" id="cookie-save-row" hidden>
-        <button type="button" class="cookie-btn cookie-btn-accept" id="cookie-save">Auswahl speichern</button>
       </div>
     </div>
   </section>
@@ -1485,8 +1527,7 @@
       const overlay = document.getElementById("cookie-overlay");
       const banner = document.getElementById("cookie-banner");
       const categories = document.getElementById("cookie-categories");
-      const actionsRow = banner.querySelector(".cookie-actions:not(.cookie-actions-save)");
-      const saveRow = document.getElementById("cookie-save-row");
+      const gear = document.getElementById("cookie-settings");
       const catAnalytics = document.getElementById("cat-analytics");
       const catMarketing = document.getElementById("cat-marketing");
 
@@ -1526,12 +1567,13 @@
         saveConsent({ necessary: true, analytics: false, marketing: false });
       });
 
-      document.getElementById("cookie-settings").addEventListener("click", () => {
-        const isOpen = !categories.hidden;
-        categories.hidden = isOpen;
-        saveRow.hidden = isOpen;
-        actionsRow.style.display = isOpen ? "grid" : "none";
-      });
+      function toggleCategories(forceOpen) {
+        const isOpen = forceOpen !== undefined ? forceOpen : categories.hidden;
+        categories.hidden = !isOpen;
+        gear.setAttribute("aria-expanded", String(isOpen));
+      }
+
+      gear.addEventListener("click", () => toggleCategories());
 
       document.getElementById("cookie-save").addEventListener("click", () => {
         saveConsent({
@@ -1542,14 +1584,12 @@
       });
 
       document.getElementById("cookie-settings-link").addEventListener("click", () => {
-        categories.hidden = false;
-        saveRow.hidden = false;
-        actionsRow.style.display = "none";
         let stored = null;
         try { stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null"); } catch (e) {}
         catAnalytics.checked = !!(stored && stored.analytics);
         catMarketing.checked = !!(stored && stored.marketing);
         openBanner();
+        toggleCategories(true);
       });
 
       let existing = null;
