@@ -1007,17 +1007,20 @@
             </label>
           </div>
           <div class="form-row">
-            <label> Telefon oder E-Mail
-              <input type="text" name="contact" autocomplete="email" placeholder="Kontaktmoeglichkeit" required>
+            <label> E-Mail
+              <input type="email" name="email" autocomplete="email" placeholder="deine@email.de" required>
             </label>
-            <label> Einsatzart
-              <select name="mode">
-                <option>Vor Ort bis 100 km um Erfurt</option>
-                <option>Industrieteile zuschicken</option>
-                <option>Erstberatung</option>
-              </select>
+            <label> Telefonnummer
+              <input type="tel" name="phone" autocomplete="tel" placeholder="+49 ..." required>
             </label>
           </div>
+          <label> Einsatzart
+            <select name="mode">
+              <option>Vor Ort bis 100 km um Erfurt</option>
+              <option>Industrieteile zuschicken</option>
+              <option>Erstberatung</option>
+            </select>
+          </label>
           <label> Bauteil und Verschmutzung
             <textarea name="message" placeholder="Welche Teile sollen gereinigt werden? Welche Rueckstaende sind vorhanden?" required></textarea>
           </label>
