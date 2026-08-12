@@ -4,4 +4,4 @@ Disallow: /impressum
 Disallow: /datenschutz
 Disallow: /sitemap
 
-Sitemap: https://www.powertech-performance.de/sitemap.xml
+Sitemap: https://www.powertech-dry-ice.de/sitemap.xml
