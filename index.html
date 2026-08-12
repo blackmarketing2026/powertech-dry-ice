@@ -4,8 +4,56 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Powertech Performance | Trockeneisreinigung Erfurt</title>
-  <meta name="description" content="Powertech Performance bietet professionelle Trockeneisreinigung fuer Industrieteile: vor Ort im Umkreis von 100 km um Erfurt oder per Versand.">
+  <meta name="description" content="Powertech Performance bietet professionelle Trockeneisreinigung für Industrieteile: vor Ort im Umkreis von 100 km um Erfurt oder per Versand.">
   <meta name="google-site-verification" content="KK3YtHXND-yNN4E2QsGmk_9Uey2rrYPpQlnINQ51HlY" />
+  <script>
+    (function () {
+      var GTM_ID = "GTM-KL7S6F4C";
+      var STORAGE_KEY = "ppc-cookie-consent";
+      var loaded = false;
+
+      function hasConsent() {
+        try {
+          var stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
+          return !!(stored && (stored.analytics || stored.marketing));
+        } catch (e) {
+          return false;
+        }
+      }
+
+      function loadGtm() {
+        if (loaded || !hasConsent()) return;
+        loaded = true;
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = document.getElementsByTagName("script")[0];
+        var j = document.createElement("script");
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + GTM_ID;
+        f.parentNode.insertBefore(j, f);
+
+        var iframe = document.createElement("iframe");
+        iframe.src = "https://www.googletagmanager.com/ns.html?id=" + GTM_ID;
+        iframe.height = 0;
+        iframe.width = 0;
+        iframe.style.display = "none";
+        iframe.style.visibility = "hidden";
+        var noscript = document.createElement("noscript");
+        noscript.appendChild(iframe);
+        document.body.insertBefore(noscript, document.body.firstChild);
+      }
+
+      window.ppLoadGtmIfConsented = loadGtm;
+      document.addEventListener("pp-consent-update", loadGtm);
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", loadGtm);
+      } else {
+        loadGtm();
+      }
+    })();
+  </script>
   <style>
     :root {
       --black: #02050a;
@@ -996,14 +1044,14 @@
     }
 
     .cookie-banner-main {
-      padding: clamp(28px, 4.2vw, 44px);
+      padding: clamp(18px, 2.4vw, 26px);
     }
 
     .cookie-head {
       display: flex;
       align-items: flex-start;
-      gap: 24px;
-      margin-bottom: 28px;
+      gap: 20px;
+      margin-bottom: 18px;
     }
 
     .cookie-text {
@@ -1189,7 +1237,7 @@
     </a>
     <nav class="nav" aria-label="Hauptnavigation">
       <a href="#leistungen">Leistungen</a>
-      <a href="#ueber-uns">Ueber uns</a>
+      <a href="#ueber-uns">Über uns</a>
       <a href="#ablauf">Ablauf</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
@@ -1199,9 +1247,9 @@
   <main id="top">
     <section class="hero" aria-label="Powertech Performance Trockeneisreinigung">
       <div class="hero-inner reveal">
-        <p class="eyebrow">Trockeneisreinigung fuer Industrie-Teile</p>
-        <h1><span class="ice-text">Eiskalt.</span><br>Praezise.<br>Sauber.</h1>
-        <p class="hero-copy">Powertech Performance reinigt Maschinen- und Industrieteile mit Trockeneis: materialschonend, trocken und ohne abrasive Rueckstaende. Teile einsenden oder im Umkreis von 100 km um Erfurt vor Ort reinigen lassen.</p>
+        <p class="eyebrow">Trockeneisreinigung für Industrie-Teile</p>
+        <h1><span class="ice-text">Eiskalt.</span><br>Präzise.<br>Sauber.</h1>
+        <p class="hero-copy">Powertech Performance reinigt Maschinen- und Industrieteile mit Trockeneis: materialschonend, trocken und ohne abrasive Rückstände. Teile einsenden oder im Umkreis von 100 km um Erfurt vor Ort reinigen lassen.</p>
         <div class="hero-actions">
           <a class="cta" href="#kontakt">Projekt anfragen</a>
           <a class="ghost" href="#leistungen">Leistung ansehen</a>
@@ -1227,7 +1275,7 @@
     <section id="leistungen">
       <div class="section-head reveal">
         <h2>Industrieteile wie neu.</h2>
-        <p>Fuer verharzte, oelige, verrusste oder produktionsverschmutzte Komponenten. Trockeneis arbeitet ohne Wasser und ohne Strahlmittelreste, ideal fuer empfindliche Oberflaechen, Formen, Motorenteile, Werkzeuge und Maschinenbereiche.</p>
+        <p>Für verharzte, ölige, verrusste oder produktionsverschmutzte Komponenten. Trockeneis arbeitet ohne Wasser und ohne Strahlmittelreste, ideal für empfindliche Oberflächen, Formen, Motorenteile, Werkzeuge und Maschinenbereiche.</p>
       </div>
 
       <div class="services-grid">
@@ -1242,10 +1290,10 @@
 
         <article class="service-card reveal">
           <span class="tag">Per Versand</span>
-          <img src="assets/parts-cleaning.png" alt="Trockeneisstrahl auf praezise Metallteile">
+          <img src="assets/parts-cleaning.png" alt="Trockeneisstrahl auf präzise Metallteile">
           <div class="content">
             <h3>Teile einschicken</h3>
-            <p>Industrieteile koennen angeliefert oder zugesendet werden. Wir reinigen sie kontrolliert, schonend und bereiten sie fuer Rueckversand oder Abholung vor.</p>
+            <p>Industrieteile können angeliefert oder zugesendet werden. Wir reinigen sie kontrolliert, schonend und bereiten sie für Rückversand oder Abholung vor.</p>
           </div>
         </article>
 
@@ -1254,7 +1302,7 @@
           <img src="assets/hero-dry-ice.png" alt="Techniker reinigt ein Maschinenteil mit Trockeneis">
           <div class="content">
             <h3>1-5 m³/Minute</h3>
-            <p>Die Kompressorleistung wird passend zur Verschmutzung, Bauteilgeometrie und Oberflaeche eingestellt, damit Reinigungskraft und Materialschutz zusammenpassen.</p>
+            <p>Die Kompressorleistung wird passend zur Verschmutzung, Bauteilgeometrie und Oberfläche eingestellt, damit Reinigungskraft und Materialschutz zusammenpassen.</p>
           </div>
         </article>
       </div>
@@ -1266,13 +1314,13 @@
           <img src="assets/powertech-logo.png" alt="">
         </div>
         <div class="about-panel reveal">
-          <p class="eyebrow">Ueber uns</p>
+          <p class="eyebrow">Über uns</p>
           <h2>Powertech Performance</h2>
-          <p class="lead">Powertech Performance bietet Trockeneis-Reinigung fuer die Industrie an: Teilreinigung vor Ort, Reinigung zugesendeter Komponenten und saubere Vorbereitung von Maschinen- und Anlagenbauteilen.</p>
+          <p class="lead">Powertech Performance bietet Trockeneis-Reinigung für die Industrie an: Teilreinigung vor Ort, Reinigung zugesendeter Komponenten und saubere Vorbereitung von Maschinen- und Anlagenbauteilen.</p>
           <ul class="check-list">
-            <li>Schonende Entfernung von Oel, Fett, Produktionsrueckstaenden, Ruß und Anhaftungen.</li>
-            <li>Trockener Prozess ohne Wasserfilm und ohne zusaetzliches Strahlgut auf dem Bauteil.</li>
-            <li>Luxurioes praezise Anmutung, aber mit handfester Werkstatt- und Industrieorientierung.</li>
+            <li>Schonende Entfernung von Oel, Fett, Produktionsrückständen, Ruß und Anhaftungen.</li>
+            <li>Trockener Prozess ohne Wasserfilm und ohne zusätzliches Strahlgut auf dem Bauteil.</li>
+            <li>Luxuriöse präzise Anmutung, aber mit handfester Werkstatt- und Industrieorientierung.</li>
           </ul>
         </div>
       </div>
@@ -1280,8 +1328,8 @@
 
     <section class="process-band" id="ablauf">
       <div class="section-head reveal">
-        <h2>So laeuft die Reinigung.</h2>
-        <p>Kurz klaeren, Bauteile pruefen, Reinigung ausfuehren, Ergebnis uebergeben. Der Ablauf ist bewusst direkt gehalten, damit du schnell zu sauberen Teilen kommst.</p>
+        <h2>So läuft die Reinigung.</h2>
+        <p>Kurz klären, Bauteile prüfen, Reinigung ausführen, Ergebnis übergeben. Der Ablauf ist bewusst direkt gehalten, damit du schnell zu sauberen Teilen kommst.</p>
       </div>
       <div class="process">
         <article class="step reveal">
@@ -1291,8 +1339,8 @@
         </article>
         <article class="step reveal">
           <b>02</b>
-          <h3>Pruefung</h3>
-          <p>Wir schaetzen Aufwand, Zugaenglichkeit und geeignete Strahlparameter ein.</p>
+          <h3>Prüfung</h3>
+          <p>Wir schätzen Aufwand, Zugänglichkeit und geeignete Strahlparameter ein.</p>
         </article>
         <article class="step reveal">
           <b>03</b>
@@ -1301,8 +1349,8 @@
         </article>
         <article class="step reveal">
           <b>04</b>
-          <h3>Uebergabe</h3>
-          <p>Saubere Teile zurueck in den Prozess, zur Montage oder zur Weiterbearbeitung.</p>
+          <h3>Übergabe</h3>
+          <p>Saubere Teile zurück in den Prozess, zur Montage oder zur Weiterbearbeitung.</p>
         </article>
       </div>
     </section>
@@ -1311,7 +1359,7 @@
       <div class="contact-wrap">
         <div class="contact-card reveal">
           <p class="eyebrow">Kontakt</p>
-          <h2>Bereit fuer eiskalte Reinigungskraft?</h2>
+          <h2>Bereit für eiskalte Reinigungskraft?</h2>
           <p class="lead">Schick eine unverbindliche Anfrage mit Bauteil, Verschmutzung und Standort.</p>
           <div class="address">
             <strong>Powertech Performance</strong>
@@ -1346,10 +1394,10 @@
             </select>
           </label>
           <label> Bauteil und Verschmutzung
-            <textarea name="message" placeholder="Welche Teile sollen gereinigt werden? Welche Rueckstaende sind vorhanden?" required></textarea>
+            <textarea name="message" placeholder="Welche Teile sollen gereinigt werden? Welche Rückstände sind vorhanden?" required></textarea>
           </label>
           <input type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
-          <p class="notice">Wir melden uns in der Regel innerhalb eines Werktags zurueck. Mit dem Absenden stimmst du der Verarbeitung deiner Angaben gemaess unserer <a href="/datenschutz">Datenschutzerklaerung</a> zu.</p>
+          <p class="notice">Wir melden uns in der Regel innerhalb eines Werktags zurück. Mit dem Absenden stimmst du der Verarbeitung deiner Angaben gemäß unserer <a href="/datenschutz">Datenschutzerklärung</a> zu.</p>
           <button class="cta submit" type="submit">Anfrage senden</button>
         </form>
       </div>
@@ -1365,7 +1413,7 @@
         <button type="button" id="cookie-settings-link" class="footer-link-btn">Cookie-Einstellungen</button>
       </nav>
     </div>
-    <p class="footer-disclaimer">Hinweis: Diese Website nutzt zu Analyse- und Marketingzwecken ggf. Meta-/Facebook-Pixel gemaess Ihrer Cookie-Einwilligung. Bei der Erstellung von Bildmaterial und Teilen der Website wurden KI-gestuetzte Werkzeuge eingesetzt. Details siehe <a href="/datenschutz">Datenschutzerklaerung</a>.</p>
+    <p class="footer-disclaimer">Hinweis: Diese Website nutzt zu Analyse- und Marketingzwecken ggf. Meta-/Facebook-Pixel gemäß Ihrer Cookie-Einwilligung. Bei der Erstellung von Bildmaterial und Teilen der Website wurden KI-gestützte Werkzeuge eingesetzt. Details siehe <a href="/datenschutz">Datenschutzerklärung</a>.</p>
   </footer>
 
   <div class="toast" role="status" aria-live="polite">Das Formular ist aktuell noch ohne Versandfunktion.</div>
@@ -1376,13 +1424,13 @@
       <div class="cookie-head">
         <p id="cookie-desc" class="cookie-text">
           <strong id="cookie-title">Wir brauchen deine Erlaubnis</strong>
-          Damit die Website voll funktionsfaehig ist, brauchen wir deine Erlaubnis. Details in der <a href="/datenschutz">Datenschutzerklaerung</a>.
+          Damit die Website voll funktionsfähig ist, brauchen wir deine Erlaubnis. Details in der <a href="/datenschutz">Datenschutzerklärung</a>.
         </p>
         <div class="cookie-head-actions">
           <button type="button" class="cookie-gear" id="cookie-settings" aria-label="Cookie-Einstellungen" aria-expanded="false" title="Einstellungen">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
           </button>
-          <button type="button" class="cookie-gear cookie-close" id="cookie-close" aria-label="Cookie-Banner schliessen" title="Schliessen">
+          <button type="button" class="cookie-gear cookie-close" id="cookie-close" aria-label="Cookie-Banner schließen" title="Schließen">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
           </button>
         </div>
@@ -1391,7 +1439,7 @@
       <div class="cookie-categories" id="cookie-categories" hidden>
         <label class="cookie-cat">
           <input type="checkbox" checked disabled>
-          <span><strong>Notwendig</strong><br>Fuer Grundfunktionen der Website erforderlich, immer aktiv.</span>
+          <span><strong>Notwendig</strong><br>Für Grundfunktionen der Website erforderlich, immer aktiv.</span>
         </label>
         <label class="cookie-cat">
           <input type="checkbox" id="cat-analytics">
@@ -1399,14 +1447,14 @@
         </label>
         <label class="cookie-cat">
           <input type="checkbox" id="cat-marketing">
-          <span><strong>Marketing</strong><br>Meta-/Facebook-Pixel und Google Tag Manager fuer Anzeigen.</span>
+          <span><strong>Marketing</strong><br>Meta-/Facebook-Pixel und Google Tag Manager für Anzeigen.</span>
         </label>
         <button type="button" class="cookie-btn cookie-btn-accept" id="cookie-save">Auswahl speichern</button>
       </div>
 
       <div class="cookie-actions" id="cookie-main-actions">
         <button type="button" class="cookie-btn" id="cookie-reject">Ablehnen</button>
-        <button type="button" class="cookie-btn" id="cookie-essential">Nur das Noetigste erlauben</button>
+        <button type="button" class="cookie-btn" id="cookie-essential">Nur das Nötigste erlauben</button>
         <button type="button" class="cookie-btn cookie-btn-accept" id="cookie-accept">Alles erlauben</button>
       </div>
     </div>
@@ -1556,7 +1604,7 @@
           showToast(result.error || "Anfrage konnte nicht gesendet werden.");
         }
       } catch (err) {
-        showToast("Netzwerkfehler. Bitte spaeter erneut versuchen.");
+        showToast("Netzwerkfehler. Bitte später erneut versuchen.");
       } finally {
         submitBtn.disabled = false;
         submitBtn.textContent = "Anfrage senden";
@@ -1583,7 +1631,7 @@
         window.ppConsent = consent;
         document.dispatchEvent(new CustomEvent("pp-consent-update", { detail: consent }));
         // Analyse-/Marketing-Skripte (z.B. Google Analytics, Meta-Pixel, Google Tag Manager)
-        // duerfen erst hier, nach Vorliegen der Einwilligung, nachgeladen werden.
+        // dürfen erst hier, nach Vorliegen der Einwilligung, nachgeladen werden.
       }
 
       function saveConsent(consent) {

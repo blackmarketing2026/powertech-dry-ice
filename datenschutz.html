@@ -3,9 +3,57 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Datenschutzerklaerung | Powertech Performance</title>
+  <title>Datenschutzerklärung | Powertech Performance</title>
   <meta name="robots" content="noindex, follow">
   <link rel="stylesheet" href="legal.css">
+  <script>
+    (function () {
+      var GTM_ID = "GTM-KL7S6F4C";
+      var STORAGE_KEY = "ppc-cookie-consent";
+      var loaded = false;
+
+      function hasConsent() {
+        try {
+          var stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
+          return !!(stored && (stored.analytics || stored.marketing));
+        } catch (e) {
+          return false;
+        }
+      }
+
+      function loadGtm() {
+        if (loaded || !hasConsent()) return;
+        loaded = true;
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = document.getElementsByTagName("script")[0];
+        var j = document.createElement("script");
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + GTM_ID;
+        f.parentNode.insertBefore(j, f);
+
+        var iframe = document.createElement("iframe");
+        iframe.src = "https://www.googletagmanager.com/ns.html?id=" + GTM_ID;
+        iframe.height = 0;
+        iframe.width = 0;
+        iframe.style.display = "none";
+        iframe.style.visibility = "hidden";
+        var noscript = document.createElement("noscript");
+        noscript.appendChild(iframe);
+        document.body.insertBefore(noscript, document.body.firstChild);
+      }
+
+      window.ppLoadGtmIfConsented = loadGtm;
+      document.addEventListener("pp-consent-update", loadGtm);
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", loadGtm);
+      } else {
+        loadGtm();
+      }
+    })();
+  </script>
 </head>
 <body>
   <header class="legal-header">
@@ -13,16 +61,16 @@
       <img src="assets/powertech-logo.png" alt="Powertech Performance Logo">
       <span>Powertech<br>Performance</span>
     </a>
-    <a class="back-link" href="/#top">&larr; Zurueck zur Website</a>
+    <a class="back-link" href="/#top">&larr; Zurück zur Website</a>
   </header>
 
   <main class="legal">
-    <h1>Datenschutzerklaerung</h1>
+    <h1>Datenschutzerklärung</h1>
     <p class="updated">Stand: August 2026</p>
 
     <section>
       <h2>1. Verantwortlicher</h2>
-      <p>Verantwortlich fuer die Datenverarbeitung auf dieser Website im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:</p>
+      <p>Verantwortlich für die Datenverarbeitung auf dieser Website im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:</p>
       <p class="meta">
         <strong>Powertech Performance</strong><br>
         Benjamin Lemmer<br>
@@ -36,92 +84,92 @@
 
     <section>
       <h2>2. Allgemeines zur Datenverarbeitung</h2>
-      <p>Wir verarbeiten personenbezogene Daten unserer Nutzer grundsaetzlich nur, soweit dies zur Bereitstellung einer funktionsfaehigen Website sowie unserer Inhalte und Leistungen erforderlich ist. Die Verarbeitung personenbezogener Daten erfolgt nur nach Einwilligung des Nutzers oder auf Basis einer anderen gesetzlichen Erlaubnis (Art. 6 Abs. 1 DSGVO), etwa zur Erfuellung vertraglicher Pflichten, zur Wahrung berechtigter Interessen oder aufgrund gesetzlicher Vorgaben.</p>
+      <p>Wir verarbeiten personenbezogene Daten unserer Nutzer grundsätzlich nur, soweit dies zur Bereitstellung einer funktionsfähigen Website sowie unserer Inhalte und Leistungen erforderlich ist. Die Verarbeitung personenbezogener Daten erfolgt nur nach Einwilligung des Nutzers oder auf Basis einer anderen gesetzlichen Erlaubnis (Art. 6 Abs. 1 DSGVO), etwa zur Erfüllung vertraglicher Pflichten, zur Wahrung berechtigter Interessen oder aufgrund gesetzlicher Vorgaben.</p>
     </section>
 
     <section>
       <h2>3. Hosting und Bereitstellung der Website</h2>
       <h3>3.1 Hosting bei Vercel</h3>
-      <p>Diese Website wird bei <strong>Vercel Inc.</strong>, 340 S Lemon Ave #4133, Walnut, CA 91789, USA, gehostet. Vercel verarbeitet dabei automatisch technische Daten (u. a. IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, Browsertyp) in sogenannten Server-Logfiles, um die Website stabil und sicher ausliefern zu koennen.</p>
-      <p>Da Vercel Inc. ihren Sitz in den USA hat, kann es zu einer Datenuebermittlung in ein Drittland ausserhalb der EU/des EWR kommen. Vercel verpflichtet sich vertraglich zur Einhaltung der EU-Standardvertragsklauseln (Art. 46 DSGVO) als geeignete Garantie fuer ein angemessenes Datenschutzniveau. Weitere Informationen: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">vercel.com/legal/privacy-policy</a>.</p>
+      <p>Diese Website wird bei <strong>Vercel Inc.</strong>, 340 S Lemon Ave #4133, Walnut, CA 91789, USA, gehostet. Vercel verarbeitet dabei automatisch technische Daten (u. a. IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, Browsertyp) in sogenannten Server-Logfiles, um die Website stabil und sicher ausliefern zu können.</p>
+      <p>Da Vercel Inc. ihren Sitz in den USA hat, kann es zu einer Datenübermittlung in ein Drittland außerhalb der EU/des EWR kommen. Vercel verpflichtet sich vertraglich zur Einhaltung der EU-Standardvertragsklauseln (Art. 46 DSGVO) als geeignete Garantie für ein angemessenes Datenschutzniveau. Weitere Informationen: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">vercel.com/legal/privacy-policy</a>.</p>
       <p>Rechtsgrundlage ist unser berechtigtes Interesse an einer technisch fehlerfreien Darstellung und Optimierung unserer Website (Art. 6 Abs. 1 lit. f DSGVO).</p>
 
       <h3>3.2 Domain-Registrierung</h3>
-      <p>Die Domain dieser Website ist bei der <strong>All-Inkl.com – Neue Medien Muennich</strong>, Hauptstrasse 68, 02742 Friedersdorf, Deutschland, registriert und wird von dort per DNS auf das Hosting bei Vercel verwiesen. All-Inkl verarbeitet in diesem Zusammenhang technische Verbindungsdaten im Rahmen der DNS-Aufloesung.</p>
+      <p>Die Domain dieser Website ist bei der <strong>All-Inkl.com – Neue Medien Münnich</strong>, Hauptstraße 68, 02742 Friedersdorf, Deutschland, registriert und wird von dort per DNS auf das Hosting bei Vercel verwiesen. All-Inkl verarbeitet in diesem Zusammenhang technische Verbindungsdaten im Rahmen der DNS-Auflösung.</p>
 
       <h3>3.3 Quellcode-Verwaltung</h3>
-      <p>Der Quellcode dieser Website wird ueber GitHub Inc. (bzw. GitHub B.V. fuer Nutzer in der EU) verwaltet und automatisiert an Vercel ausgeliefert. Es findet dabei keine Verarbeitung personenbezogener Daten von Website-Besuchern statt.</p>
+      <p>Der Quellcode dieser Website wird über GitHub Inc. (bzw. GitHub B.V. für Nutzer in der EU) verwaltet und automatisiert an Vercel ausgeliefert. Es findet dabei keine Verarbeitung personenbezogener Daten von Website-Besuchern statt.</p>
     </section>
 
     <section>
       <h2>4. Server-Logfiles</h2>
-      <p>Beim Aufruf dieser Website werden durch den Hosting-Provider automatisch Informationen in sogenannten Server-Logfiles erfasst, die Ihr Browser automatisch uebermittelt. Dies sind:</p>
+      <p>Beim Aufruf dieser Website werden durch den Hosting-Provider automatisch Informationen in sogenannten Server-Logfiles erfasst, die Ihr Browser automatisch übermittelt. Dies sind:</p>
       <ul>
-        <li>IP-Adresse des zugreifenden Endgeraets</li>
+        <li>IP-Adresse des zugreifenden Endgeräts</li>
         <li>Datum und Uhrzeit des Zugriffs</li>
         <li>Name und URL der abgerufenen Datei</li>
         <li>Website, von der aus der Zugriff erfolgt (Referrer-URL)</li>
         <li>verwendeter Browser und ggf. das Betriebssystem</li>
       </ul>
-      <p>Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO aus unserem berechtigten Interesse an der Sicherstellung eines stoerungsfreien Betriebs sowie der Sicherheit unserer informationstechnischen Systeme. Eine Zusammenfuehrung dieser Daten mit anderen Datenquellen erfolgt nicht.</p>
+      <p>Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO aus unserem berechtigten Interesse an der Sicherstellung eines störungsfreien Betriebs sowie der Sicherheit unserer informationstechnischen Systeme. Eine Zusammenführung dieser Daten mit anderen Datenquellen erfolgt nicht.</p>
     </section>
 
     <section>
       <h2>5. Kontaktformular</h2>
-      <p>Wenn Sie uns ueber das Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Formular (Name, Unternehmen, E-Mail-Adresse, Telefonnummer, Einsatzart und Nachricht) sowie die darin angegebenen Kontaktdaten von uns per E-Mail-Versand ueber einen SMTP-Dienst zur Bearbeitung der Anfrage und fuer den Fall von Anschlussfragen bei uns gespeichert.</p>
+      <p>Wenn Sie uns über das Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Formular (Name, Unternehmen, E-Mail-Adresse, Telefonnummer, Einsatzart und Nachricht) sowie die darin angegebenen Kontaktdaten von uns per E-Mail-Versand über einen SMTP-Dienst zur Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert.</p>
       <p>Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage der Anbahnung eines Vertrags dient, andernfalls auf Grundlage unseres berechtigten Interesses an der Beantwortung von Anfragen (Art. 6 Abs. 1 lit. f DSGVO).</p>
-      <p>Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei uns, bis Sie uns zur Loeschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck fuer die Datenspeicherung entfaellt (z. B. nach abgeschlossener Bearbeitung Ihrer Anfrage). Zwingende gesetzliche Bestimmungen – insbesondere handels- und steuerrechtliche Aufbewahrungsfristen – bleiben unberuehrt.</p>
+      <p>Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung Ihrer Anfrage). Zwingende gesetzliche Bestimmungen – insbesondere handels- und steuerrechtliche Aufbewahrungsfristen – bleiben unberührt.</p>
     </section>
 
     <section>
       <h2>6. Cookies, Analyse- und Marketing-Tools</h2>
-      <p>Wir setzen zur Analyse der Nutzung dieser Website sowie fuer Marketingzwecke die nachfolgend beschriebenen Dienste ein. Alle diese Dienste setzen technisch nicht notwendige Cookies bzw. vergleichbare Technologien ein und verarbeiten personenbezogene Daten (u. a. IP-Adresse, Geraete- und Nutzungsdaten). Sie werden ausschliesslich auf Grundlage Ihrer <strong>ausdruecklichen Einwilligung</strong> gemaess § 25 Abs. 1 TDDDG i. V. m. Art. 6 Abs. 1 lit. a DSGVO aktiviert. Ohne Ihre Einwilligung ueber unseren Cookie-Consent-Banner laden diese Dienste nicht. Sie koennen Ihre Einwilligung jederzeit mit Wirkung fuer die Zukunft widerrufen.</p>
+      <p>Wir setzen zur Analyse der Nutzung dieser Website sowie für Marketingzwecke die nachfolgend beschriebenen Dienste ein. Alle diese Dienste setzen technisch nicht notwendige Cookies bzw. vergleichbare Technologien ein und verarbeiten personenbezogene Daten (u. a. IP-Adresse, Geräte- und Nutzungsdaten). Sie werden ausschließlich auf Grundlage Ihrer <strong>ausdrücklichen Einwilligung</strong> gemäß § 25 Abs. 1 TDDDG i. V. m. Art. 6 Abs. 1 lit. a DSGVO aktiviert. Ohne Ihre Einwilligung über unseren Cookie-Consent-Banner laden diese Dienste nicht. Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen.</p>
 
       <h3>6.1 Google Analytics</h3>
-      <p>Sofern Sie eingewilligt haben, nutzen wir Google Analytics, einen Webanalysedienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland ("Google"). Google Analytics verwendet Cookies bzw. aehnliche Technologien, um Ihre Nutzung der Website (u. a. Klicks, Verweildauer, Herkunft der Zugriffe) zu analysieren. Die daraus erstellten Reports helfen uns, unsere Website zu verbessern. Die Daten koennen an Server von Google in den USA uebertragen werden; Google hat sich zur Einhaltung des EU-U.S. Data Privacy Framework bzw. der EU-Standardvertragsklauseln verpflichtet. Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+      <p>Sofern Sie eingewilligt haben, nutzen wir Google Analytics, einen Webanalysedienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland ("Google"). Google Analytics verwendet Cookies bzw. ähnliche Technologien, um Ihre Nutzung der Website (u. a. Klicks, Verweildauer, Herkunft der Zugriffe) zu analysieren. Die daraus erstellten Reports helfen uns, unsere Website zu verbessern. Die Daten können an Server von Google in den USA übertragen werden; Google hat sich zur Einhaltung des EU-U.S. Data Privacy Framework bzw. der EU-Standardvertragsklauseln verpflichtet. Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
 
       <h3>6.2 Google Tag Manager</h3>
-      <p>Wir setzen den Google Tag Manager der Google Ireland Limited ein. Der Tag Manager ist ein Verwaltungssystem, mit dem Website-Tags (z. B. fuer Google Analytics oder Meta Pixel) zentral eingebunden werden koennen. Der Google Tag Manager selbst setzt keine eigenen Cookies, ermoeglicht aber die Ausloesung anderer Tags, die wiederum Daten verarbeiten koennen. Die datenschutzrechtliche Bewertung richtet sich nach den jeweils ueber den Tag Manager eingebundenen Diensten; auch der Tag Manager wird erst nach Ihrer Einwilligung aktiviert.</p>
+      <p>Wir setzen den Google Tag Manager der Google Ireland Limited ein. Der Tag Manager ist ein Verwaltungssystem, mit dem Website-Tags (z. B. für Google Analytics oder Meta Pixel) zentral eingebunden werden können. Der Google Tag Manager selbst setzt keine eigenen Cookies, ermöglicht aber die Auslösung anderer Tags, die wiederum Daten verarbeiten können. Die datenschutzrechtliche Bewertung richtet sich nach den jeweils über den Tag Manager eingebundenen Diensten; auch der Tag Manager wird erst nach Ihrer Einwilligung aktiviert.</p>
 
       <h3>6.3 Meta/Facebook-Pixel</h3>
-      <p>Sofern Sie eingewilligt haben, setzen wir das Meta-Pixel der Meta Platforms Ireland Limited, 4 Grand Canal Square, Dublin 2, Irland ("Meta") ein. Das Meta-Pixel ermoeglicht es uns, den Erfolg unserer Facebook- und Instagram-Werbeanzeigen zu Statistik- und Marktforschungszwecken nachzuvollziehen und um zu verstehen, wie Nutzer unsere Website nach einem Klick auf eine Anzeige verwenden ("Conversion-Messung"). Die erhobenen Daten sind fuer uns anonym, Meta kann die Daten jedoch gegebenenfalls einem Nutzerprofil zuordnen und fuer eigene Werbezwecke gemaess der Meta-Datenrichtlinie nutzen. Dadurch kann Meta die Schaltung von Anzeigen auf und ausserhalb von Facebook/Instagram ermoeglichen. Es koennen Daten in die USA uebertragen werden. Weitere Informationen: <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">facebook.com/privacy/policy</a>. Widerspruchsmoeglichkeiten (Opt-out) bietet Meta u. a. unter <a href="https://www.facebook.com/settings?tab=ads" target="_blank" rel="noopener">facebook.com/settings?tab=ads</a>.</p>
+      <p>Sofern Sie eingewilligt haben, setzen wir das Meta-Pixel der Meta Platforms Ireland Limited, 4 Grand Canal Square, Dublin 2, Irland ("Meta") ein. Das Meta-Pixel ermöglicht es uns, den Erfolg unserer Facebook- und Instagram-Werbeanzeigen zu Statistik- und Marktforschungszwecken nachzuvollziehen und um zu verstehen, wie Nutzer unsere Website nach einem Klick auf eine Anzeige verwenden ("Conversion-Messung"). Die erhobenen Daten sind für uns anonym, Meta kann die Daten jedoch gegebenenfalls einem Nutzerprofil zuordnen und für eigene Werbezwecke gemäß der Meta-Datenrichtlinie nutzen. Dadurch kann Meta die Schaltung von Anzeigen auf und außerhalb von Facebook/Instagram ermöglichen. Es können Daten in die USA übertragen werden. Weitere Informationen: <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">facebook.com/privacy/policy</a>. Widerspruchsmöglichkeiten (Opt-out) bietet Meta u. a. unter <a href="https://www.facebook.com/settings?tab=ads" target="_blank" rel="noopener">facebook.com/settings?tab=ads</a>.</p>
 
       <h3>6.4 Widerruf und Verwaltung Ihrer Einwilligung</h3>
-      <p>Sie koennen der Verwendung der oben genannten Analyse- und Marketing-Tools jederzeit widersprechen bzw. Ihre einmal erteilte Einwilligung ueber die Cookie-Einstellungen widerrufen. Ausserdem koennen Sie das Setzen von Cookies durch entsprechende Einstellungen Ihres Browsers verhindern; wir weisen jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht alle Funktionen dieser Website vollumfaenglich nutzen koennen.</p>
+      <p>Sie können der Verwendung der oben genannten Analyse- und Marketing-Tools jederzeit widersprechen bzw. Ihre einmal erteilte Einwilligung über die Cookie-Einstellungen widerrufen. Außerdem können Sie das Setzen von Cookies durch entsprechende Einstellungen Ihres Browsers verhindern; wir weisen jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht alle Funktionen dieser Website vollumfänglich nutzen können.</p>
     </section>
 
     <section>
-      <h2>7. Einsatz von Kuenstlicher Intelligenz (KI)</h2>
-      <p>Bei der Erstellung dieser Website, einschliesslich Teilen der Bildmaterialien, Layout- und Textvorschlaege, wurden KI-gestuetzte Werkzeuge unterstuetzend eingesetzt. Es werden dabei im Rahmen der Website-Erstellung <strong>keine personenbezogenen Daten von Website-Besuchern</strong> an die verwendeten KI-Systeme uebermittelt. Die KI-Nutzung bezieht sich ausschliesslich auf die Gestaltung der Website (Bild- und Inhaltserstellung) und nicht auf die Verarbeitung Ihrer Daten bei der Nutzung dieser Website.</p>
+      <h2>7. Einsatz von Künstlicher Intelligenz (KI)</h2>
+      <p>Bei der Erstellung dieser Website, einschließlich Teilen der Bildmaterialien, Layout- und Textvorschläge, wurden KI-gestützte Werkzeuge unterstützend eingesetzt. Es werden dabei im Rahmen der Website-Erstellung <strong>keine personenbezogenen Daten von Website-Besuchern</strong> an die verwendeten KI-Systeme übermittelt. Die KI-Nutzung bezieht sich ausschließlich auf die Gestaltung der Website (Bild- und Inhaltserstellung) und nicht auf die Verarbeitung Ihrer Daten bei der Nutzung dieser Website.</p>
     </section>
 
     <section>
       <h2>7. Direktkontakt per WhatsApp und Telefon</h2>
-      <p>Auf dieser Website bieten wir Buttons an, ueber die Sie uns direkt per WhatsApp (WhatsApp Ireland Limited, 4 Grand Canal Square, Dublin 2, Irland, ein Unternehmen der Meta-Gruppe) oder per Telefonanruf kontaktieren koennen. Beim Anklicken dieser Buttons wird die jeweilige Anwendung (WhatsApp-App bzw. Telefon-App) auf Ihrem Endgeraet geoeffnet; es werden zu diesem Zeitpunkt noch keine Daten an uns oder Dritte uebertragen. Erst wenn Sie den Kontakt tatsaechlich herstellen, verarbeiten wir die dabei anfallenden Daten (z. B. Telefonnummer, Chatverlauf) zur Bearbeitung Ihrer Anfrage auf Grundlage von Art. 6 Abs. 1 lit. b bzw. f DSGVO. Fuer die Datenverarbeitung innerhalb von WhatsApp ist WhatsApp Ireland Limited verantwortlich; es gelten deren Datenschutzhinweise.</p>
+      <p>Auf dieser Website bieten wir Buttons an, über die Sie uns direkt per WhatsApp (WhatsApp Ireland Limited, 4 Grand Canal Square, Dublin 2, Irland, ein Unternehmen der Meta-Gruppe) oder per Telefonanruf kontaktieren können. Beim Anklicken dieser Buttons wird die jeweilige Anwendung (WhatsApp-App bzw. Telefon-App) auf Ihrem Endgerät geöffnet; es werden zu diesem Zeitpunkt noch keine Daten an uns oder Dritte übertragen. Erst wenn Sie den Kontakt tatsächlich herstellen, verarbeiten wir die dabei anfallenden Daten (z. B. Telefonnummer, Chatverlauf) zur Bearbeitung Ihrer Anfrage auf Grundlage von Art. 6 Abs. 1 lit. b bzw. f DSGVO. Für die Datenverarbeitung innerhalb von WhatsApp ist WhatsApp Ireland Limited verantwortlich; es gelten deren Datenschutzhinweise.</p>
     </section>
 
     <section>
-      <h2>8. SSL-/TLS-Verschluesselung</h2>
-      <p>Diese Website nutzt aus Sicherheitsgruenden und zum Schutz der Uebertragung vertraulicher Inhalte eine SSL-/TLS-Verschluesselung. Eine verschluesselte Verbindung erkennen Sie an dem Praefix "https://" und dem Schloss-Symbol in Ihrer Browserzeile.</p>
+      <h2>8. SSL-/TLS-Verschlüsselung</h2>
+      <p>Diese Website nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL-/TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie an dem Präfix "https://" und dem Schloss-Symbol in Ihrer Browserzeile.</p>
     </section>
 
     <section>
       <h2>9. Ihre Rechte als betroffene Person</h2>
-      <p>Ihnen stehen gegenueber uns hinsichtlich der Sie betreffenden personenbezogenen Daten folgende Rechte zu:</p>
+      <p>Ihnen stehen gegenüber uns hinsichtlich der Sie betreffenden personenbezogenen Daten folgende Rechte zu:</p>
       <ul>
         <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
-        <li>Recht auf Berichtigung oder Loeschung (Art. 16, 17 DSGVO)</li>
-        <li>Recht auf Einschraenkung der Verarbeitung (Art. 18 DSGVO)</li>
+        <li>Recht auf Berichtigung oder Löschung (Art. 16, 17 DSGVO)</li>
+        <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
         <li>Recht auf Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
-        <li>Recht auf Datenuebertragbarkeit (Art. 20 DSGVO)</li>
-        <li>Recht auf Widerruf einer erteilten Einwilligung mit Wirkung fuer die Zukunft (Art. 7 Abs. 3 DSGVO)</li>
+        <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+        <li>Recht auf Widerruf einer erteilten Einwilligung mit Wirkung für die Zukunft (Art. 7 Abs. 3 DSGVO)</li>
       </ul>
-      <p>Sie haben ausserdem das Recht, sich bei einer Datenschutz-Aufsichtsbehoerde ueber die Verarbeitung Ihrer personenbezogenen Daten durch uns zu beschweren, z. B. beim Thueringer Landesbeauftragten fuer den Datenschutz und die Informationsfreiheit.</p>
+      <p>Sie haben außerdem das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung Ihrer personenbezogenen Daten durch uns zu beschweren, z. B. beim Thüringer Landesbeauftragten für den Datenschutz und die Informationsfreiheit.</p>
     </section>
 
     <section>
-      <h2>10. Aktualitaet und Aenderung dieser Datenschutzerklaerung</h2>
-      <p>Diese Datenschutzerklaerung ist aktuell gueltig und hat den Stand August 2026. Durch die Weiterentwicklung unserer Website oder aufgrund geaenderter gesetzlicher beziehungsweise behoerdlicher Vorgaben kann es notwendig werden, diese Datenschutzerklaerung zu aendern.</p>
+      <h2>10. Aktualität und Aenderung dieser Datenschutzerklärung</h2>
+      <p>Diese Datenschutzerklärung ist aktuell gültig und hat den Stand August 2026. Durch die Weiterentwicklung unserer Website oder aufgrund geänderter gesetzlicher beziehungsweise behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern.</p>
     </section>
   </main>
 
