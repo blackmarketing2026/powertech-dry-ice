@@ -1063,6 +1063,11 @@
       background: rgba(2, 5, 10, .4);
     }
 
+    .cookie-categories[hidden],
+    .cookie-actions[hidden] {
+      display: none;
+    }
+
     .cookie-cat {
       display: grid;
       grid-template-columns: 20px 1fr;
@@ -1527,6 +1532,7 @@
       const overlay = document.getElementById("cookie-overlay");
       const banner = document.getElementById("cookie-banner");
       const categories = document.getElementById("cookie-categories");
+      const mainActions = document.getElementById("cookie-main-actions");
       const gear = document.getElementById("cookie-settings");
       const catAnalytics = document.getElementById("cat-analytics");
       const catMarketing = document.getElementById("cat-marketing");
@@ -1570,6 +1576,7 @@
       function toggleCategories(forceOpen) {
         const isOpen = forceOpen !== undefined ? forceOpen : categories.hidden;
         categories.hidden = !isOpen;
+        mainActions.hidden = isOpen;
         gear.setAttribute("aria-expanded", String(isOpen));
       }
 
